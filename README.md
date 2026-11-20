@@ -21,7 +21,8 @@ Docente: **Justo Fuentes Cuello**.
 ## 📁 Estructura
 
 ```
-app.py                      Inicio
+app.py                      Menú de navegación (nombres con tildes)
+inicio.py                   Página de inicio
 pages/
   1_Plan_de_Asignatura.py   Plan oficial para socializar el primer día
   2_Estadistica.py

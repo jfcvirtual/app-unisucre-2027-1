@@ -18,7 +18,6 @@ from nucleo.registro import (COLUMNAS, ESTADOS, MOTIVOS, TEMA_SOCIALIZACION,
                              nuevo_id, obtener_almacen, socializaciones,
                              ultimo_pendiente)
 
-st.set_page_config(page_title="Registro docente", page_icon="📝", layout="wide")
 st.title("📝 Registro docente de sesiones")
 
 # ---------------------------------------------------------------

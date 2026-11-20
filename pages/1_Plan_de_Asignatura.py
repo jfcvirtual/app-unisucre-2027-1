@@ -12,7 +12,6 @@ import streamlit as st
 from nucleo.contenido import ASIGNATURAS, cargar_plan
 from nucleo.registro import obtener_almacen, socializaciones
 
-st.set_page_config(page_title="Plan de asignatura", page_icon="📜", layout="wide")
 st.title("📜 Plan de asignatura · 2027-1")
 
 clave = st.radio("Asignatura", list(ASIGNATURAS),
