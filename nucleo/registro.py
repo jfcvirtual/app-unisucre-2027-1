@@ -98,10 +98,12 @@ class _AlmacenGoogle:
             self.hoja.append_row(COLUMNAS)
 
     def leer(self) -> pd.DataFrame:
-        filas = self.hoja.get_all_records(default_blank="")
-        df = pd.DataFrame(filas, dtype=str)
-        # Quita espacios sobrantes en los encabezados ("Asignatura " -> "Asignatura")
-        df.columns = [c.strip() for c in df.columns] if len(df.columns) else COLUMNAS
+        # get_all_values trae todo como texto: la fila 1 son los encabezados
+        valores = self.hoja.get_all_values()
+        if len(valores) <= 1:  # pestaña nueva: solo encabezados o vacía
+            return pd.DataFrame(columns=COLUMNAS)
+        encabezados = [c.strip() for c in valores[0]]  # "Asignatura " -> "Asignatura"
+        df = pd.DataFrame(valores[1:], columns=encabezados).astype(str)
         for col in COLUMNAS:
             if col not in df.columns:
                 df[col] = ""
