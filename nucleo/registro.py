@@ -28,8 +28,9 @@ COLUMNAS = [
 ESTADOS = ["Dictada", "Parcial", "No dictada"]
 
 # Motivos frecuentes tomados del registro 2026-2
+SIN_MOTIVO = "— Ninguno —"
 MOTIVOS = [
-    "", "Aire acondicionado dañado", "Sala no disponible o asignada a otro docente",
+    SIN_MOTIVO, "Aire acondicionado dañado", "Sala no disponible o asignada a otro docente",
     "Sin listas de estudiantes", "Festivo", "Fallas de internet o plataforma",
     "Baja asistencia", "Actividad institucional", "Otro",
 ]

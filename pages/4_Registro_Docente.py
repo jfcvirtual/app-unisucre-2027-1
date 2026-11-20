@@ -14,7 +14,7 @@ import pandas as pd
 import streamlit as st
 
 from nucleo.contenido import ASIGNATURAS, cargar_plan, datos_semana
-from nucleo.registro import (COLUMNAS, ESTADOS, MOTIVOS, TEMA_SOCIALIZACION,
+from nucleo.registro import (COLUMNAS, ESTADOS, MOTIVOS, SIN_MOTIVO, TEMA_SOCIALIZACION,
                              nuevo_id, obtener_almacen, socializaciones,
                              ultimo_pendiente)
 
@@ -74,7 +74,8 @@ def formulario(valores: dict, clave_form: str) -> dict | None:
             return None
     return {
         "Fecha": fecha.isoformat(), "Semana": int(semana), "Sesión No": int(sesion),
-        "Tipo Sesión": tipo, "Estado": estado, "Motivo": motivo,
+        "Tipo Sesión": tipo, "Estado": estado,
+        "Motivo": "" if motivo == SIN_MOTIVO else motivo,  # en la hoja queda vacío
         # Se mantiene la columna histórica "Sesión OK?" para compatibilidad
         "Sesión OK?": "TRUE" if estado == "Dictada" else "FALSE",
         "Tema": tema, "Cubierto": cubierto, "Pendiente": pendiente,
