@@ -1,0 +1,8 @@
+streamlit>=1.40
+pandas
+numpy
+scipy
+statsmodels
+pyyaml
+gspread>=6.0
+google-auth

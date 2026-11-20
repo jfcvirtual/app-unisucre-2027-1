@@ -1,0 +1,223 @@
+# Plan de 16 semanas · Estadística Aplicada con Python y R (201622) · 2027-1
+# FUENTE: FOR-FO-030 (Programa de Asignatura) y FOR-FO-018 (Plan Calendario) 2027-1.
+# La app solo muestra el plan oficial con más detalle: si el FOR-FO-018 cambia, actualice este archivo.
+
+asignatura: estadistica
+oficial:
+  periodo: 2027-1
+  semestre: VI
+  creditos: 3
+  horas_totales: 144
+  requisitos: Álgebra Lineal y Programación de Computadores
+  area: Básica de Ingeniería
+  modalidad: Presencial con apoyo virtual
+  intensidad: "2 h teóricas + 2 h prácticas por semana; 5 h de trabajo independiente"
+  url_plan_firmado: ""   # Pegue aquí el enlace al PDF firmado en Drive
+  descripcion: >-
+    Desarrolla la capacidad de transformar datos de riego, suelos, clima, maquinaria, producción agrícola
+    y recursos hídricos en evidencia para la toma de decisiones. Integra razonamiento estadístico,
+    análisis exploratorio, probabilidad, ajuste de distribuciones, regresión y series de tiempo, con
+    resolución manual, Python, R, informes reproducibles y uso ético de inteligencia artificial.
+  resultados_aprendizaje:
+    - Realiza un análisis exploratorio completo en Python y R, complementado con cálculos y síntesis manuscritas, e interpreta los hallazgos en el contexto de la ingeniería.
+    - Ajusta y compara distribuciones Normal, Lognormal, Gamma, Gumbel y Pearson I/II, y construye modelos de regresión lineal, múltiple y no lineal con diagnóstico e interpretación técnica.
+    - Analiza y pronostica series de tiempo, compara modelos y sustenta un proyecto reproducible que documenta datos, código, decisiones metodológicas, limitaciones y uso de inteligencia artificial.
+  acuerdo: >-
+    Se acuerda desarrollar la asignatura mediante situaciones de interés, análisis manuscritos,
+    verificación en Python/R y uso gradual de agentes. Todo aporte de IA deberá ser comprendido,
+    probado, documentado y defendido individualmente.
+
+semanas:
+  - semana: 1
+    eje: "EJE I. Ética, reserva cognitiva y pensamiento estadístico"
+    tema: Ética, IA y reserva cognitiva
+    resultado: Reconoce el uso ético, transparente y responsable de la IA en el análisis estadístico y establece un protocolo de aprendizaje con control humano.
+    instrumento: Rúbrica ética y lista de cotejo.
+    evidencias: Manifiesto manuscrito, protocolo, bitácora inicial de IA, documento breve APA y video grupal.
+    sesion_1:
+      titulo: Presentación y concertación del plan de asignatura
+      contenidos: [Socialización del FOR-FO-030 y FOR-FO-018, Firma del representante del curso, "Metodología «El Lápiz y el Algoritmo»", "Caso: la IA recomienda una lámina de riego con datos incompletos"]
+    sesion_2:
+      titulo: Ética de la IA y entornos de trabajo
+      contenidos: [Integridad científica y trazabilidad, Bitácora de prompts, Configuración de Google Colab, Posit Cloud, RMarkdown, RPubs y GitHub, Contrato de uso responsable de IA]
+  - semana: 2
+    eje: "EJE II. Datos, visualización, EDA y probabilidad"
+    tema: Datos, variables y calidad de datos
+    resultado: Identifica población, muestra, variables, escalas y problemas de calidad de datos, y elabora visualizaciones básicas en Python y R.
+    instrumento: Taller diagnóstico y lista de cotejo.
+    evidencias: Diccionario de datos, ficha de calidad y notebook/RMarkdown inicial.
+    sesion_1:
+      titulo: Población, muestra, variables y escalas
+      contenidos: [Registros de humedad del suelo, precipitación y rendimiento, Tipos de variables y escalas de medición, Inspección manual de una muestra]
+    sesion_2:
+      titulo: Importación y calidad de datos con pandas y tidyverse
+      contenidos: [Estructura y tipos, Faltantes, duplicados y consistencia, Diccionario de datos]
+  - semana: 3
+    eje: "EJE II. Datos, visualización, EDA y probabilidad"
+    tema: EDA univariado
+    resultado: Calcula e interpreta medidas descriptivas univariadas a mano y las verifica en Python y R.
+    instrumento: Taller manuscrito y rúbrica de EDA.
+    evidencias: Síntesis manuscrita, notebook/RMarkdown y tabla de auditoría.
+    sesion_1:
+      titulo: Tendencia central (media, mediana y moda)
+      contenidos: [Media aritmética, Mediana, Moda, "¿Cuál usar? Efecto de los valores extremos"]
+      ejercicio: rendimiento_maiz
+    sesion_2:
+      titulo: Posición, dispersión y forma
+      contenidos: [Cuartiles y percentiles, Varianza, desviación estándar y CV, Sesgo, curtosis y atípicos, Histogramas y boxplots]
+  - semana: 4
+    eje: "EJE II. Datos, visualización, EDA y probabilidad"
+    tema: EDA bivariado y multivariado
+    resultado: Realiza análisis exploratorio bivariado y multivariado y comunica hallazgos con visualizaciones adecuadas.
+    instrumento: Rúbrica de EDA.
+    evidencias: Reporte gráfico reproducible publicado en RPubs.
+    sesion_1:
+      titulo: Relaciones entre variables
+      contenidos: [Tablas cruzadas, Diagramas de dispersión, Correlaciones exploratorias]
+    sesion_2:
+      titulo: Visualización por grupos y reporte EDA
+      contenidos: [Gráficos por grupos y facetas, seaborn/Matplotlib y ggplot2, Reporte reproducible en RPubs]
+  - semana: 5
+    eje: "EJE II. Datos, visualización, EDA y probabilidad"
+    tema: Probabilidad aplicada
+    resultado: Formula eventos, calcula probabilidades y contrasta resultados teóricos con simulaciones.
+    instrumento: Cuestionario y taller.
+    evidencias: Notebook de simulaciones y conclusiones manuscritas.
+    sesion_1:
+      titulo: Eventos y reglas de probabilidad
+      contenidos: [Espacio muestral y eventos, Reglas de la suma y el producto, Probabilidad de déficit hídrico]
+    sesion_2:
+      titulo: Probabilidad condicional y simulación
+      contenidos: [Independencia y probabilidad condicional, Fallas en sistemas de riego, Simulación en Python y R]
+  - semana: 6
+    eje: "EJE III. Distribuciones y frecuencia"
+    tema: Distribuciones de probabilidad
+    resultado: Reconoce distribuciones discretas y continuas apropiadas para variables de ingeniería.
+    instrumento: Taller comparativo.
+    evidencias: Notebook/RMarkdown con simulaciones y tabla de selección.
+    sesion_1:
+      titulo: Distribuciones discretas
+      contenidos: [Bernoulli y Binomial, Poisson, Funciones de probabilidad y distribución]
+    sesion_2:
+      titulo: Distribuciones continuas
+      contenidos: [Normal y Lognormal, Exponencial, Gamma y Weibull, Densidad y cuantiles]
+  - semana: 7
+    eje: "EJE III. Distribuciones y frecuencia"
+    tema: Ajuste de distribuciones (I)
+    resultado: Ajusta y compara distribuciones teóricas mediante estimación y pruebas de bondad de ajuste.
+    instrumento: Proyecto parcial de distribuciones.
+    evidencias: Informe reproducible, gráficos, tabla comparativa y defensa breve.
+    sesion_1:
+      titulo: Estimación de parámetros
+      contenidos: [Método de momentos, Máxima verosimilitud, Precipitación máxima y caudales]
+    sesion_2:
+      titulo: Ajuste Normal, Lognormal y Gamma
+      contenidos: [Histogramas y densidades ajustadas, Q-Q plots, Comparación Python/R]
+  - semana: 8
+    eje: "EJE III. Distribuciones y frecuencia"
+    tema: Ajuste de distribuciones (II)
+    resultado: Ajusta y compara distribuciones teóricas mediante estimación y pruebas de bondad de ajuste.
+    instrumento: Proyecto parcial de distribuciones.
+    evidencias: Informe reproducible, gráficos, tabla comparativa y defensa breve.
+    sesion_1:
+      titulo: Gumbel y Pearson I/II
+      contenidos: [Análisis de frecuencia de eventos extremos, Periodos de retorno]
+    sesion_2:
+      titulo: Pruebas de bondad de ajuste
+      contenidos: [Kolmogorov-Smirnov, Anderson-Darling, Chi-cuadrado, Selección del modelo]
+  - semana: 9
+    eje: "EJE IV. Regresión y modelación predictiva"
+    tema: Correlación y regresión simple
+    resultado: Cuantifica e interpreta asociación y construye un modelo de regresión lineal simple.
+    instrumento: Taller de regresión.
+    evidencias: Modelo, diagnóstico inicial y explicación técnica.
+    sesion_1:
+      titulo: Correlación de Pearson y Spearman
+      contenidos: [Rendimiento vs. lámina de riego, Asociación no es causalidad]
+    sesion_2:
+      titulo: Regresión lineal simple (OLS)
+      contenidos: [Cálculo manual de la recta, Intervalos y predicción, lm() y statsmodels]
+  - semana: 10
+    eje: "EJE IV. Regresión y modelación predictiva"
+    tema: Regresión múltiple
+    resultado: Construye modelos múltiples y no lineales y evalúa sus supuestos.
+    instrumento: Rúbrica de modelación.
+    evidencias: Informe de regresión, código reproducible y bitácora de decisiones.
+    sesion_1:
+      titulo: Modelo de regresión múltiple
+      contenidos: [Rendimiento en función de riego, suelo y clima, Selección de variables, Interacciones]
+    sesion_2:
+      titulo: Diagnóstico del modelo
+      contenidos: [Residuos, Multicolinealidad, Observaciones influyentes]
+  - semana: 11
+    eje: "EJE IV. Regresión y modelación predictiva"
+    tema: Modelos no lineales
+    resultado: Construye modelos múltiples y no lineales y evalúa sus supuestos.
+    instrumento: Rúbrica de modelación.
+    evidencias: Informe de regresión, código reproducible y bitácora de decisiones.
+    sesion_1:
+      titulo: Transformaciones y modelos no lineales
+      contenidos: [Transformaciones, Modelos no lineales, LOESS]
+    sesion_2:
+      titulo: Comparación de modelos
+      contenidos: [AIC y BIC, Interpretación de efectos y limitaciones]
+  - semana: 12
+    eje: "EJE IV. Regresión y modelación predictiva"
+    tema: Validación y reproducibilidad
+    resultado: Audita, valida y comunica modelos estadísticos de forma reproducible.
+    instrumento: Lista de verificación y rúbrica de auditoría.
+    evidencias: Repositorio, reporte reproducible, pruebas y bitácora de prompts.
+    sesion_1:
+      titulo: Validación de modelos
+      contenidos: [Partición de datos, Métricas, Sensibilidad e incertidumbre]
+    sesion_2:
+      titulo: Modo agente con control humano
+      contenidos: [GitHub y RMarkdown/Quarto, Revisión de cambios propuestos por la IA, Pruebas del código]
+  - semana: 13
+    eje: "EJE V. Series de tiempo y proyecto integrador"
+    tema: Series de tiempo (I)
+    resultado: Analiza los componentes temporales de una serie y prepara su validación respetando el orden temporal.
+    instrumento: Taller de series de tiempo.
+    evidencias: Notebook/RMarkdown con descomposición y diagnóstico.
+    sesion_1:
+      titulo: Índice temporal y componentes
+      contenidos: [Series de precipitación y caudal, Tendencia y estacionalidad]
+    sesion_2:
+      titulo: Descomposición de series
+      contenidos: [Descomposición aditiva y multiplicativa, Python y R]
+  - semana: 14
+    eje: "EJE V. Series de tiempo y proyecto integrador"
+    tema: Series de tiempo (II)
+    resultado: Analiza los componentes temporales de una serie y prepara su validación respetando el orden temporal.
+    instrumento: Taller de series de tiempo.
+    evidencias: Notebook/RMarkdown con descomposición y diagnóstico.
+    sesion_1:
+      titulo: Autocorrelación
+      contenidos: [ACF y PACF, Interpretación]
+    sesion_2:
+      titulo: Partición temporal
+      contenidos: [Entrenamiento y prueba respetando el tiempo, Avance del proyecto integrador]
+  - semana: 15
+    eje: "EJE V. Series de tiempo y proyecto integrador"
+    tema: Pronóstico
+    resultado: Compara modelos y genera pronósticos con incertidumbre.
+    instrumento: Proyecto parcial de series.
+    evidencias: Pronósticos, evaluación y recomendación técnica.
+    sesion_1:
+      titulo: Métricas de pronóstico
+      contenidos: [MAE, RMSE y MAPE, Validación fuera de muestra]
+    sesion_2:
+      titulo: Pronóstico con AutoTS y R
+      contenidos: [Comparación de modelos, Intervalos de pronóstico]
+  - semana: 16
+    eje: "EJE V. Series de tiempo y proyecto integrador"
+    tema: Proyecto integrador y sustentación
+    resultado: Integra EDA, distribuciones, regresión y series de tiempo en un proyecto reproducible y lo sustenta individualmente.
+    instrumento: Rúbrica final de sustentación.
+    evidencias: Informe, repositorio, bitácora de IA, presentación y defensa oral.
+    sesion_1:
+      titulo: Sustentaciones (parte 1)
+      contenidos: [Demostración del flujo reproducible, Preguntas sobre código, supuestos y decisiones]
+    sesion_2:
+      titulo: Sustentaciones (parte 2) y cierre
+      contenidos: [Sustentaciones pendientes, Retroalimentación del curso]

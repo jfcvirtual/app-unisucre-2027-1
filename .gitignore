@@ -1,0 +1,7 @@
+# Credenciales: NUNCA subir a GitHub
+.streamlit/secrets.toml
+# Datos locales de prueba
+datos/
+__pycache__/
+*.pyc
+.venv/

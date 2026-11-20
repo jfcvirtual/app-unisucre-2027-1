@@ -1,0 +1,224 @@
+# Plan de 16 semanas · Diseño Experimental (201636) · 2027-1
+# FUENTE: FOR-FO-030 (Programa de Asignatura) y FOR-FO-018 (Plan Calendario) 2027-1.
+# La app solo muestra el plan oficial con más detalle: si el FOR-FO-018 cambia, actualice este archivo.
+# Intensidad oficial: 1 h teórica + 3 h prácticas. Sesión 1: teoría y cálculo manual; Sesión 2: práctica en R/Python.
+
+asignatura: diseno
+oficial:
+  periodo: 2027-1
+  semestre: VII
+  creditos: 3
+  horas_totales: 144
+  requisitos: Estadística Aplicada con Python y R
+  area: Formación profesional / Estadística aplicada e investigación
+  modalidad: Presencial con apoyo virtual
+  intensidad: "1 h teórica + 3 h prácticas por semana; 5 h de trabajo independiente"
+  url_plan_firmado: ""   # Pegue aquí el enlace al PDF firmado en Drive
+  descripcion: >-
+    Asignatura profesional orientada a formular, ejecutar, analizar y optimizar experimentos en sistemas
+    agrícolas, agua, suelo, cultivos, clima y mecanización. Integra aleatorización, réplica y bloqueo;
+    modelos ANOVA; DCA, DBCA, cuadro latino y ANCOVA; diseños factoriales 2^k y fraccionados; y
+    metodología de superficie de respuesta, con resolución manual, R, Python y uso ético de la IA.
+  resultados_aprendizaje:
+    - Formula un protocolo experimental coherente con el problema de ingeniería, justificando factores, niveles, tratamientos, unidades, réplicas, aleatorización, bloqueo, respuesta y consideraciones éticas.
+    - Diseña y analiza DCA, DBCA, cuadro latino y modelos con covariable; verifica supuestos e interpreta ANOVA, comparaciones y magnitud práctica de los efectos.
+    - Analiza diseños factoriales y optimiza una respuesta mediante RSM, documentando código, datos, gráficos, pruebas, decisiones y uso de inteligencia artificial en un proyecto reproducible.
+  acuerdo: >-
+    Se acuerda desarrollar la asignatura mediante situaciones de interés, análisis manuscritos,
+    verificación en R/Python y uso gradual de agentes. Todo aporte de IA deberá ser comprendido,
+    probado, documentado y defendido individualmente.
+
+semanas:
+  - semana: 1
+    eje: "EJE I. Ciencia, ética y formulación experimental"
+    tema: Ciencia, ética, reserva cognitiva e IA
+    resultado: Explica por qué la experimentación y el control humano siguen siendo necesarios en la era de la IA.
+    instrumento: Rúbrica ética y lista de cotejo.
+    evidencias: Manifiesto manuscrito, protocolo y bitácora inicial de IA.
+    sesion_1:
+      titulo: Presentación y concertación del plan de asignatura
+      contenidos: [Socialización del FOR-FO-030 y FOR-FO-018, Firma del representante del curso, "Metodología «El Lápiz y el Algoritmo»"]
+    sesion_2:
+      titulo: "Caso de apertura: ¿qué acepta la IA y qué exige experimentar?"
+      contenidos: [IA que recomienda riego y fertilización con datos incompletos, Observación vs. predicción vs. evidencia experimental, Protocolo de uso responsable de IA]
+  - semana: 2
+    eje: "EJE I. Ciencia, ética y formulación experimental"
+    tema: Formulación experimental (I)
+    resultado: Formula un problema experimental y representa su modelo, variables y fuentes de variación.
+    instrumento: Taller de formulación y rúbrica.
+    evidencias: Protocolo preliminar, mapa experimental y aleatorización reproducible.
+    sesion_1:
+      titulo: Del problema a la hipótesis
+      contenidos: [Pregunta e hipótesis, Factores, niveles y tratamientos, Variable respuesta y unidad experimental]
+    sesion_2:
+      titulo: Aleatorización y croquis de campo
+      contenidos: [Aleatorización manual, Croquis del ensayo, Aleatorización reproducible en R/Python]
+  - semana: 3
+    eje: "EJE I. Ciencia, ética y formulación experimental"
+    tema: Formulación experimental (II)
+    resultado: Formula un problema experimental y representa su modelo, variables y fuentes de variación.
+    instrumento: Taller de formulación y rúbrica.
+    evidencias: Protocolo preliminar, mapa experimental y aleatorización reproducible.
+    sesion_1:
+      titulo: Réplica, bloqueo y error experimental
+      contenidos: [Unidad experimental vs. observacional, Réplica y bloqueo, Modelo lineal y supuestos]
+    sesion_2:
+      titulo: Simulación de un experimento
+      contenidos: [Simulación del error experimental en R/Python, Protocolo preliminar]
+  - semana: 4
+    eje: "EJE II. Diseños de un factor y control de variabilidad"
+    tema: Diseño completamente al azar (DCA)
+    resultado: Diseña y analiza un experimento completamente aleatorizado.
+    instrumento: Taller DCA y rúbrica de análisis.
+    evidencias: Síntesis manuscrita, script/notebook e informe reproducible.
+    sesion_1:
+      titulo: DCA y tabla ANOVA a mano
+      contenidos: [Cuándo usar un DCA, Sumas de cuadrados, Tabla ANOVA y prueba F]
+      ejercicio: dca_fertilizacion
+    sesion_2:
+      titulo: DCA en R y Python
+      contenidos: ["aov() y agricolae en R", statsmodels en Python, Coeficiente de variación]
+  - semana: 5
+    eje: "EJE II. Diseños de un factor y control de variabilidad"
+    tema: DCA (complementos)
+    resultado: Diseña y analiza un experimento completamente aleatorizado.
+    instrumento: Taller DCA y rúbrica de análisis.
+    evidencias: Síntesis manuscrita, script/notebook e informe reproducible.
+    sesion_1:
+      titulo: Comparaciones múltiples y tamaño de efecto
+      contenidos: [Tukey y DMS, Tamaño de efecto, Significancia estadística vs. importancia técnica]
+    sesion_2:
+      titulo: Residuos y validación de supuestos
+      contenidos: [Normalidad y homogeneidad de varianzas, Gráficos de residuos, Informe reproducible]
+  - semana: 6
+    eje: "EJE II. Diseños de un factor y control de variabilidad"
+    tema: Diseño en bloques completos al azar (DBCA)
+    resultado: Controla una fuente conocida de variación mediante bloques completos al azar.
+    instrumento: Taller DBCA.
+    evidencias: Croquis, aleatorización, ANOVA y conclusión técnica.
+    sesion_1:
+      titulo: DBCA a mano
+      contenidos: [Gradientes de suelo, pendiente o humedad, Aleatorización dentro de bloques, Tabla ANOVA con bloques]
+    sesion_2:
+      titulo: DBCA en R y Python y eficiencia del bloqueo
+      contenidos: [agricolae y statsmodels, Eficiencia relativa frente al DCA]
+  - semana: 7
+    eje: "EJE II. Diseños de un factor y control de variabilidad"
+    tema: Cuadro latino y ANCOVA
+    resultado: Selecciona cuadro latino o ANCOVA para controlar variabilidad adicional.
+    instrumento: Taller aplicado.
+    evidencias: Selección justificada del método y análisis reproducible.
+    sesion_1:
+      titulo: Diseño en cuadro latino
+      contenidos: [Dos fuentes de variación espacial, Estructura y aleatorización, ANOVA del cuadro latino]
+    sesion_2:
+      titulo: Análisis de covarianza (ANCOVA)
+      contenidos: [Covariables como humedad inicial o densidad aparente, Ajuste de medias, Covariables afectadas por el tratamiento]
+  - semana: 8
+    eje: "EJE III. Diseños factoriales y experimentación secuencial"
+    tema: Diseños factoriales (I)
+    resultado: Estima e interpreta efectos principales e interacciones en diseños factoriales.
+    instrumento: Taller factorial y rúbrica.
+    evidencias: Tabla de efectos, gráficos, ANOVA e interpretación.
+    sesion_1:
+      titulo: Factorial 2^2
+      contenidos: [Riego × fertilización, Codificación y contrastes, Cálculo manual de efectos]
+    sesion_2:
+      titulo: Interacción y gráficos
+      contenidos: [Gráficos de interacción, ANOVA factorial en R/Python]
+  - semana: 9
+    eje: "EJE III. Diseños factoriales y experimentación secuencial"
+    tema: Diseños factoriales (II)
+    resultado: Estima e interpreta efectos principales e interacciones en diseños factoriales.
+    instrumento: Taller factorial y rúbrica.
+    evidencias: Tabla de efectos, gráficos, ANOVA e interpretación.
+    sesion_1:
+      titulo: Factorial 2^3 y cubo factorial
+      contenidos: [Efectos principales e interacciones, Puntos centrales]
+    sesion_2:
+      titulo: Factoriales fraccionados
+      contenidos: [Fraccionamiento y confusión, Análisis en R/Python]
+  - semana: 10
+    eje: "EJE III. Diseños factoriales y experimentación secuencial"
+    tema: RSM de primer orden (I)
+    resultado: Construye un modelo de primer orden y propone una trayectoria experimental de mejora.
+    instrumento: Taller RSM de primer orden.
+    evidencias: Modelo, trayectoria, tabla de corridas y decisión experimental.
+    sesion_1:
+      titulo: Modelo de primer orden
+      contenidos: [Codificación de variables, Ajuste y diagnóstico]
+    sesion_2:
+      titulo: Ajuste con rsm y Python
+      contenidos: [Paquete rsm en R, statsmodels en Python]
+  - semana: 11
+    eje: "EJE III. Diseños factoriales y experimentación secuencial"
+    tema: RSM de primer orden (II)
+    resultado: Construye un modelo de primer orden y propone una trayectoria experimental de mejora.
+    instrumento: Taller RSM de primer orden.
+    evidencias: Modelo, trayectoria, tabla de corridas y decisión experimental.
+    sesion_1:
+      titulo: Trayectoria de máximo ascenso
+      contenidos: [Derivación manual de la dirección, Gradiente y tamaño de paso]
+    sesion_2:
+      titulo: Experimentación secuencial
+      contenidos: [Simulación de puntos de la trayectoria, Cuándo detener o rediseñar]
+  - semana: 12
+    eje: "EJE IV. Superficie de respuesta y proyecto integrador"
+    tema: RSM de segundo orden (I)
+    resultado: Ajusta e interpreta un modelo cuadrático y localiza un punto estacionario.
+    instrumento: Proyecto parcial RSM.
+    evidencias: Diseño, modelo cuadrático, gráficos y recomendación técnica.
+    sesion_1:
+      titulo: Diseño central compuesto
+      contenidos: [Construcción del diseño, Términos cuadráticos]
+    sesion_2:
+      titulo: Ajuste del modelo cuadrático
+      contenidos: [ANOVA y falta de ajuste, Análisis en R/Python]
+  - semana: 13
+    eje: "EJE IV. Superficie de respuesta y proyecto integrador"
+    tema: RSM de segundo orden (II)
+    resultado: Ajusta e interpreta un modelo cuadrático y localiza un punto estacionario.
+    instrumento: Proyecto parcial RSM.
+    evidencias: Diseño, modelo cuadrático, gráficos y recomendación técnica.
+    sesion_1:
+      titulo: Punto estacionario y análisis canónico
+      contenidos: [Localización y clasificación del punto estacionario, Riesgo de extrapolación]
+    sesion_2:
+      titulo: Superficie 3D y curvas de nivel
+      contenidos: [Visualización en R/Python, Condiciones operativas recomendadas]
+  - semana: 14
+    eje: "EJE IV. Superficie de respuesta y proyecto integrador"
+    tema: Proyecto integrador (I)
+    resultado: Integra formulación, diseño, análisis y comunicación en un proyecto experimental reproducible.
+    instrumento: Rúbrica de proyecto y lista de pruebas.
+    evidencias: Protocolo, datos, scripts, informe, repositorio, app opcional y bitácora de IA.
+    sesion_1:
+      titulo: Protocolo del proyecto
+      contenidos: [Problema, diseño y croquis, Asesoría por equipos]
+    sesion_2:
+      titulo: Análisis de datos del proyecto
+      contenidos: [Análisis en R/Python, Revisión de pares]
+  - semana: 15
+    eje: "EJE IV. Superficie de respuesta y proyecto integrador"
+    tema: Proyecto integrador (II)
+    resultado: Integra formulación, diseño, análisis y comunicación en un proyecto experimental reproducible.
+    instrumento: Rúbrica de proyecto y lista de pruebas.
+    evidencias: Protocolo, datos, scripts, informe, repositorio, app opcional y bitácora de IA.
+    sesion_1:
+      titulo: Informe y repositorio
+      contenidos: [Informe reproducible, Repositorio y bitácora de IA]
+    sesion_2:
+      titulo: Ensayo de sustentación
+      contenidos: [Presentación preliminar, Retroalimentación]
+  - semana: 16
+    eje: "EJE IV. Superficie de respuesta y proyecto integrador"
+    tema: Sustentación final
+    resultado: Sustenta el proyecto y demuestra dominio del diseño, análisis y uso de IA.
+    instrumento: Rúbrica final de sustentación.
+    evidencias: Informe, repositorio, bitácora, presentación y defensa oral.
+    sesion_1:
+      titulo: Sustentaciones (parte 1)
+      contenidos: [Defensa individual, Modificación breve de código o interpretación de una salida]
+    sesion_2:
+      titulo: Sustentaciones (parte 2) y cierre
+      contenidos: [Sustentaciones pendientes, Retroalimentación del curso]
