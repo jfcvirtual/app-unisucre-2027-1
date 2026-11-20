@@ -63,6 +63,21 @@ class _AlmacenCSV:
         self.guardar_todo(df[COLUMNAS])
 
 
+def _leer_credenciales() -> dict:
+    """
+    Credenciales de la cuenta de servicio. Se aceptan dos formas en los Secrets:
+      1. gcp_json = ''' {contenido completo del archivo .json} '''   (recomendada)
+      2. [gcp_service_account] con cada campo por separado
+    """
+    import json
+
+    if "gcp_json" in st.secrets["registro"]:          # dentro de [registro]
+        return json.loads(st.secrets["registro"]["gcp_json"])
+    if "gcp_json" in st.secrets:                      # al inicio del archivo
+        return json.loads(st.secrets["gcp_json"])
+    return dict(st.secrets["gcp_service_account"])
+
+
 class _AlmacenGoogle:
     """Almacén en Google Sheets mediante una cuenta de servicio."""
 
@@ -71,10 +86,10 @@ class _AlmacenGoogle:
     def __init__(self):
         import gspread  # se importa aquí para no exigirlo en modo CSV
 
-        credenciales = dict(st.secrets["gcp_service_account"])
+        credenciales = _leer_credenciales()
         cliente = gspread.service_account_from_dict(credenciales)
         libro = cliente.open_by_key(st.secrets["registro"]["sheet_id"])
-        pestaña = st.secrets["registro"].get("pestaña", "Sesiones_2027_S_1")
+        pestaña = st.secrets["registro"].get("pestana", "Sesiones_2027_S_1")
         try:
             self.hoja = libro.worksheet(pestaña)
         except gspread.WorksheetNotFound:
@@ -109,7 +124,9 @@ class _AlmacenGoogle:
 def obtener_almacen():
     """Usa Google Sheets si hay credenciales en st.secrets; si no, CSV local."""
     try:
-        hay_credenciales = "gcp_service_account" in st.secrets and "registro" in st.secrets
+        hay_credenciales = "registro" in st.secrets and (
+            "gcp_json" in st.secrets["registro"] or "gcp_json" in st.secrets
+            or "gcp_service_account" in st.secrets)
     except Exception:  # no existe secrets.toml: modo de prueba local
         hay_credenciales = False
     if not hay_credenciales:

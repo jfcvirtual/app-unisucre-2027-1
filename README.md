@@ -58,12 +58,16 @@ Sin `secrets.toml`, el registro se guarda en `datos/registro_local.csv` y la con
 
 ## 🔗 Conectar con la Google Sheet (la de AppSheet)
 
-1. En **Google Cloud Console**: crear un proyecto → habilitar **Google Sheets API** y **Google Drive API**.
-2. Crear una **cuenta de servicio** → Claves → Agregar clave JSON (se descarga un archivo).
-3. Abrir la Google Sheet de AppSheet → **Compartir** con el correo de la cuenta de servicio (`...@...iam.gserviceaccount.com`) como **Editor**.
-4. Copiar `.streamlit/secrets.toml.ejemplo` como `.streamlit/secrets.toml` y llenarlo con
-   el ID de la hoja, la pestaña del semestre y los datos del JSON.
-5. Si la pestaña `Sesiones_2027_S_1` no existe, la app la crea con sus encabezados.
+1. En **console.cloud.google.com**: crear el proyecto `app-unisucre` y habilitar **Google Sheets API**.
+2. **IAM y administración → Cuentas de servicio → Crear**: nombre `registro-sesiones` (sin roles).
+3. En la cuenta creada: **Claves → Agregar clave → Crear clave nueva → JSON** (se descarga un archivo `.json`).
+4. Abrir la Google Sheet de AppSheet → **Compartir** con el correo `client_email` del JSON como **Editor**.
+5. En Streamlit Cloud → **Manage app → Settings → Secrets**, pegar la plantilla de
+   `.streamlit/secrets.toml.ejemplo` con el `sheet_id` y el contenido COMPLETO del `.json`
+   entre las comillas `'''` de `gcp_json`.
+6. Si la pestaña `Sesiones_2027_S_1` no existe, la app la crea con sus encabezados.
+
+> 🔒 El archivo `.json` es una llave: no se sube a GitHub ni se comparte por chat o WhatsApp.
 
 ## ☁️ Publicar en Streamlit Community Cloud
 
